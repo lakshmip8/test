@@ -1,0 +1,96 @@
+<div class="container">
+    <ul class="nav nav-justified">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Devices</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#/pages/certificates">Manage Cretificates</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#/pages/devices">Blocked Devices</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#/pages/settings">Settings</a>
+      </li>
+    </ul>
+  </div>
+ <nav class="navbar">
+
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          All Devices
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Button 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Button 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Button 3</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Button 4</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Button 5</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Button 6</a>
+      </li>
+    </ul>
+  </nav>
+  
+  <div class="pull-right">
+    LAST REFRESHED:
+  </div>
+  <h4>Certificate Management</h4>
+  <div class="flex-container">
+    <div><span class="status-text">{{certificate.open}}</span>Open</div>
+    <div><span class="status-text">{{certificate.critical}}</span> Critical</div>
+    <div><span class="status-text">{{certificate.failed}}</span>Failed</div>
+    <div><span class="status-text">{{certificate.total}}</span>Total</div>
+    <div><span class="status-text">{{certificate.authenticated}}</span>Authenticated</div>
+  </div>
+ 
+  <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#home">Alarms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu1">Job Status</a>
+      </li>
+    </ul>
+  <table class="table">
+    <tr>
+      <th><input type="checkbox" (click)="selectAll($event.currentTarget.checked)"> </th>
+      <th>Job Name</th>
+      <th>Status</th>
+      <th>Firmware</th>
+      <th>NoDevices</th>
+      <th>Succeeded</th>
+      <th>Failed</th>
+      <th>START TIME</th>
+      <th>END TIME</th>
+    </tr>
+  
+    <tr *ngFor="let jobStatus of jobStatuses">
+      <td><input type="checkbox" [checked]="jobStatus.selected"> </td>
+      <td>{{jobStatus.jobName}}</td>
+      <td>{{jobStatus.status}}</td>
+      <td>{{jobStatus.firmware}}</td>
+      <td>{{jobStatus.noDevices}}</td>
+      <td>{{jobStatus.succeeded}}</td>
+      <td>{{jobStatus.failed}}</td>
+      <td>{{jobStatus.startTime}}</td>
+      <td>{{jobStatus.endTime}}</td>
+    </tr>
+  </table>
+  

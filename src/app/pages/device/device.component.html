@@ -1,0 +1,53 @@
+<div class="container">
+  <ul class="nav nav-justified">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="" routerLinkActive="active">Devices</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" routerLink="certificates" routerLinkActive="active">Manage Cretificates</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="blockedDevices" routerLinkActive="active">Blocked Devices</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="settings" routerLinkActive="active">Settings</a>
+    </li>
+  </ul>
+</div>
+<a href="#" routerLink="certificates" >Manage Cretificates</a>
+<a href="#" routerLink="blockedDevices" >Blocked Devices</a>
+
+<div class="container">
+  <button type="button">All Devices<span class="caret"></span></button>
+</div>
+
+<div class="pull-right">
+  LAST REFRESHED:
+</div>
+<table class="table">
+  <tr>
+    <th>
+      <input type="checkbox" (click)="selectAll($event.currentTarget.checked)"> </th>
+    <th>Device Name</th>
+    <th>Communication Type</th>
+    <th>Location</th>
+    <th>Firmware</th>
+    <th>Telemetry</th>
+    <th>Status</th>
+    <th>Last Connection</th>
+    <th>Authentication Status</th>
+  </tr>
+
+  <tr *ngFor="let device of devices">
+    <td>
+      <input type="checkbox" [checked]="device.selected"> </td>
+    <td>{{device.deviceName}}</td>
+    <td>{{device.communicationType}}</td>
+    <td>{{device.location}}</td>
+    <td>{{device.firmWare}}</td>
+    <td>{{device.telemetry}}</td>
+    <td>{{device.status}}</td>
+    <td>{{device.lastConnection}}</td>
+    <td>{{device.authStatus}}</td>
+  </tr>
+</table>

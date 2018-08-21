@@ -1,0 +1,29 @@
+ul{
+    list-style-type: none;
+    display:flex;
+}
+li{
+    width: 100px;
+    border: 1px solid grey;
+}
+a{
+    text-decoration: none;
+}
+
+.pull-right{
+    text-align: right;
+}
+th{
+    background-color: darkgrey;
+    color:white;
+}
+table{
+    border:1px solid grey;
+}
+.dropdown{
+    width:10%;
+}
+
+.active{
+    background-color: cadetblue;
+}
